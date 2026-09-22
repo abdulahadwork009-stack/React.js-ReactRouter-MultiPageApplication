@@ -1,0 +1,33 @@
+@import url("https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap");
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Bricolage Grotesque", "Plus Jakarta Sans", ui-sans-serif, system-ui,
+    sans-serif;
+
+  --color-plum-950: #1c1030;
+  --color-plum-900: #2a1b3d;
+  --color-plum-700: #4d3670;
+  --color-plum-300: #c9b8e0;
+  --color-plum-100: #ece5f6;
+  --color-plum-50: #f7f3fb;
+
+  --color-marigold: #ffb627;
+  --color-leaf: #17806d;
+  --color-chili: #c23d17;
+}
+
+@layer base {
+  body {
+    background-color: var(--color-plum-50);
+    color: var(--color-plum-900);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-plum-900);
+    outline-offset: 2px;
+  }
+}
