@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 
 export default function ProductDetails() {
-  // useParams() reads the :id part of /products/:id
+
   const { id } = useParams();
   const navigate = useNavigate();
 

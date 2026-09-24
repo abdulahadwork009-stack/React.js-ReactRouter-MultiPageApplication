@@ -32,7 +32,6 @@ export default function Navbar() {
           <span className="font-display text-xl font-bold tracking-tight">Bazaar</span>
         </Link>
 
-        {/* Desktop menu */}
         <ul className="hidden items-center gap-1 md:flex">
           {navLinks.map((link) => (
             <li key={link.to}>
@@ -43,7 +42,6 @@ export default function Navbar() {
           ))}
         </ul>
 
-        {/* Mobile menu button */}
         <button
           type="button"
           aria-expanded={isMenuOpen}
@@ -70,7 +68,6 @@ export default function Navbar() {
         </button>
       </nav>
 
-      {/* Mobile menu */}
       {isMenuOpen && (
         <ul id="mobile-menu" className="space-y-1 border-t border-plum-100 px-4 py-3 md:hidden">
           {navLinks.map((link) => (

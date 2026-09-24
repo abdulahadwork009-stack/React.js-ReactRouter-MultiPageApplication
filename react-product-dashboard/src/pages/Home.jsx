@@ -4,7 +4,6 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 const HERO_PRODUCTS_URL =
   "https://dummyjson.com/products/category/smartphones?limit=3&select=title,price,thumbnail";
 
-// Where each of the three product tiles sits on the yellow panel.
 const tileLayouts = [
   "left-[5%] top-[5%] -rotate-6",
   "right-[5%] top-[30%] rotate-3",
@@ -39,8 +38,6 @@ export default function Home() {
   const [heroProducts, setHeroProducts] = useState([]);
   const [sentBy, setSentBy] = useState(null);
 
-  // The Contact page navigates here with { state: { sentBy: "Name" } }.
-  // We read it once, show the banner, then clear the state so a refresh doesn't show it again.
   useEffect(() => {
     if (location.state?.sentBy) {
       setSentBy(location.state.sentBy);
@@ -48,7 +45,6 @@ export default function Home() {
     }
   }, [location, navigate]);
 
-  // The product photos are decorative, so a failed request is ignored on purpose.
   useEffect(() => {
     const controller = new AbortController();
 
@@ -60,7 +56,6 @@ export default function Home() {
     return () => controller.abort();
   }, []);
 
-  // Show three empty tiles until the photos arrive.
   const tiles = heroProducts.length > 0 ? heroProducts.slice(0, 3) : [null, null, null];
 
   return (

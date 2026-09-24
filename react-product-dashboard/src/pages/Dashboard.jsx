@@ -1,8 +1,6 @@
 import { Outlet } from "react-router-dom";
 import DashboardNav from "../components/DashboardNav";
 
-// Parent route: it draws the shared layout, and <Outlet /> shows the
-// matching child route (Profile or Settings) inside it.
 export default function Dashboard() {
   return (
     <div className="mx-auto max-w-6xl px-4 py-10 sm:px-6">

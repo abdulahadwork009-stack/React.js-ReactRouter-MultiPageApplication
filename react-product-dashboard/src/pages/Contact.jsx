@@ -39,10 +39,8 @@ export default function Contact() {
   const [isSending, setIsSending] = useState(false);
   const redirectTimer = useRef(null);
 
-  // Stop the pending redirect if the user leaves this page first.
   useEffect(() => () => clearTimeout(redirectTimer.current), []);
 
-  // One handler for all three fields: the input's `name` attribute is the key in formData.
   const handleChange = (event) => {
     const { name, value } = event.target;
     setFormData((current) => ({ ...current, [name]: value }));
@@ -61,7 +59,6 @@ export default function Contact() {
 
     setIsSending(true);
 
-    // Pretend to send the message, then navigate to the Home page.
     redirectTimer.current = setTimeout(() => {
       navigate("/", { state: { sentBy: formData.name.trim() } });
     }, 800);

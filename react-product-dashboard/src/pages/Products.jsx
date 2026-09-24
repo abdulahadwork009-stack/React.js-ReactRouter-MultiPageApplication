@@ -32,7 +32,6 @@ export default function Products() {
         const data = await response.json();
         setProducts(data.products);
       } catch (error) {
-        // The effect was cleaned up (or React StrictMode re-ran it): another request is on its way.
         if (error.name === "AbortError") return;
         setErrorMessage("We couldn't load the products. Check your connection and try again.");
       }
@@ -170,7 +169,6 @@ export default function Products() {
   );
 }
 
-// Grey placeholder card shown while products are loading.
 function SkeletonCard() {
   return (
     <div

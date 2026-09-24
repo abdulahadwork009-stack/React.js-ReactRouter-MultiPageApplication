@@ -28,24 +28,22 @@ export default function App() {
         <Routes>
           <Route path="/" element={<Home />} />
 
-          {/* Redirect: /home always goes to / */}
+        
           <Route path="/home" element={<Navigate to="/" replace />} />
 
           <Route path="/products" element={<Products />} />
-          {/* Dynamic route: :id is read with useParams() */}
+    
           <Route path="/products/:id" element={<ProductDetails />} />
 
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
 
-          {/* Nested routes: Dashboard renders <Outlet /> for its children */}
           <Route path="/dashboard" element={<Dashboard />}>
             <Route index element={<Navigate to="profile" replace />} />
             <Route path="profile" element={<Profile />} />
             <Route path="settings" element={<Settings />} />
           </Route>
 
-          {/* 404: matches any URL that no route above matched */}
           <Route path="*" element={<NotFound />} />
         </Routes>
       </main>
